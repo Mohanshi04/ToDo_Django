@@ -1,0 +1,182 @@
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  padding: 20px;
+  border-radius: 15px;
+  background-color: #ffe4ec; /* pastel pink */
+  max-width: 400px;
+  margin: 40px auto;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+input[type="text"],
+input[type="password"],
+textarea {
+  width: 100%;
+  padding: 12px 16px; /* <-- equal left and right padding */
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #fceff9, #dff6fd);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Common container */
+.signup-login {
+    width: 100%;
+    max-width: 420px;
+    padding: 20px;
+}
+
+/* Signup/Login/ToDo Box */
+.signup-box {
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.signup-box:hover {
+    transform: translateY(-4px);
+}
+
+/* Heading */
+.heading {
+    text-align: center;
+    font-size: 28px;
+    color: #4d2c91;
+    margin-bottom: 15px;
+}
+
+.line {
+    height: 3px;
+    background: #ffd6ec;
+    margin: 0 auto 25px auto;
+    width: 50%;
+    border-radius: 3px;
+}
+
+/* Input Fields */
+.field {
+    margin-bottom: 20px;
+}
+
+.inp {
+    width: 100%;
+    padding: 12px;
+    border-radius: 12px;
+    border: 2px solid #f3c3e8;
+    outline: none;
+    font-size: 16px;
+    background-color: #fffafc;
+    transition: 0.3s;
+}
+
+.inp:focus {
+    border-color: #d08eff;
+}
+
+/* Submit Buttons */
+.submit-button,
+.submit {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 12px;
+    background: #ff89a3;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.submit-button:hover,
+.submit:hover {
+    background: #ff6b8d;
+}
+
+/* Link to other page */
+.anc {
+    text-decoration: none;
+    color: #6f42c1;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 8px;
+    transition: 0.2s;
+}
+
+.anc:hover {
+    color: #a166ff;
+}
+
+/* Todo Task Card */
+.todo {
+    background: #ffe9f0;
+    margin-top: 15px;
+    padding: 16px 20px;
+    border-radius: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.07);
+    transition: transform 0.2s;
+}
+
+.todo:hover {
+    transform: scale(1.02);
+}
+
+.todo h5 {
+    margin: 0;
+    color: #8b33a9;
+    font-size: 18px;
+}
+
+.todo p {
+    margin: 0;
+    flex-grow: 1;
+    padding: 0 12px;
+    color: #333;
+    font-weight: 500;
+}
+
+/* Icons for edit/delete */
+.todo i {
+    color: #7f5af0;
+    font-size: 18px;
+    margin-left: 10px;
+    transition: 0.3s;
+}
+
+.todo i:hover {
+    color: #ff3f7c;
+}
+
+/* Logout Button */
+a[href="/logout"] {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-weight: 600;
+    color: #ff4d6d;
+    text-decoration: none;
+    font-size: 18px;
+    transition: 0.2s;
+}
+
+a[href="/logout"]:hover {
+    color: #c71f43;
+}

@@ -1,0 +1,46 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- <script>src=""</script> -->
+</head>
+<body>
+    <div class="signup-login">
+        <h1>Helloo {{user}}!!</h1>
+        <a href="/logout" style="float:right; color:#007BFF;"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        <!-- <a href="/logout/"><i class="fas fa-sign-out-alt"></i> Logout</a> -->
+
+        <div class="signup-box scr">
+            <div class="heading">
+                    <b>MY TO DO LIST</b>
+            </div>
+            <div class="line"></div>
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <form method="POST">
+                {% csrf_token %}
+                <input type="text" required class="inp" name="task" placeholder="Add Today's Task" value="{{obj.task}}">
+                <!-- <input type="text" class="submit-button" value="Save"> -->
+                <button class="submit">Update Task</button>
+            </form>
+
+{% for todo in res %}
+    <div class="todo">
+        <h5>{{todo.srno}}</h5>
+        <p>{{todo.task}}</p>
+        <div>
+            <a href="/edit_todo/{{todo.srno}}"><i class="fa-solid fa-pen-to-square"></i></a>
+            <a href="/delete_todo/{{todo.srno}}"><i class="fa-solid fa-trash"></i></a>
+        </div>
+    </div>
+{% endfor %}
+        </div>
+    </div>
+    
+</body>
+</html>

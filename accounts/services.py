@@ -26,7 +26,7 @@ def send_sign_in_email(user: CustomUser) -> None:
         f'<a href="{verification_link}" target="_blank">here</a> '
         'to verify your email address'
     )
-    # NEWWWWWWWWWWWWWWWWWWWW
+    ##################################
     # print("Direct getenv:", os.getenv("EMAIL_VERIFICATION_URL"))
     # print("Using verification link:", verification_link)
     # print("ENV VERIFICATION URL:", repr(settings.EMAIL_VERIFICATION_URL))

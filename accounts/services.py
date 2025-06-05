@@ -19,9 +19,9 @@ def send_sign_in_email(user: CustomUser) -> None:
     # verification_link = f"{settings.EMAIL_VERIFICATION_URL}/{uid}/{token}/"
     verification_link = f"http://localhost:8000/accounts/verify-email/{uid}/{token}/"
 
-    subject = 'Verify your email address 🚀'
+    subject = 'Verify your email address!'
     message = (
-        'Hi there 🙂\n'
+        'Hi there :)\n'
         'Please click '
         f'<a href="{verification_link}" target="_blank">here</a> '
         'to verify your email address'

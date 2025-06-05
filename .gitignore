@@ -1,6 +1,7 @@
-todo_env/
+todoenv/
+.env
 db.sqlite3
-__pycache__/
+**/__pycache__/
 *.py[cod]
 **/migrations/*.py
 !**/migrations/__init__.py

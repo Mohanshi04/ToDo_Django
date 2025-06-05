@@ -10,12 +10,33 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
-from pathlib import Path
 import os
+from dotenv import load_dotenv
+from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+load_dotenv(BASE_DIR / '.env')
 
+
+#NEWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+# env_path = BASE_DIR / '.env'
+# if env_path.exists():
+#     load_dotenv(dotenv_path=env_path)
+#     print(f"Loaded .env from {env_path}")
+# else:
+#     print(f".env file not found at: {env_path}")
+# EMAIL_VERIFICATION_URL = os.getenv('EMAIL_VERIFICATION_URL', 'http://localhost:8000/verify-email')
+# print(f"Loaded EMAIL_VERIFICATION_URL: {EMAIL_VERIFICATION_URL}")
+# EMAIL_VERIFICATION_URL=os.environ['EMAIL_VERIFICATION_URL']
+#################################################################
+
+EMAIL_BACKEND=os.environ['EMAIL_BACKEND']
+EMAIL_HOST=os.environ['EMAIL_HOST']
+EMAIL_PORT=os.environ['EMAIL_PORT']
+EMAIL_USE_TLS=os.environ['EMAIL_USE_TLS']
+EMAIL_HOST_USER=os.environ['EMAIL_HOST_USER']
+EMAIL_HOST_PASSWORD=os.environ['EMAIL_HOST_PASSWORD']
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
@@ -39,6 +60,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'ToDo_Django',
+    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -56,8 +78,8 @@ ROOT_URLCONF = 'ToDo_Django.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        # 'DIRS': [BASE_DIR/ 'templates'],
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': [BASE_DIR/ 'templates'],
+        # 'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -126,3 +148,5 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+AUTH_USER_MODEL = 'accounts.CustomUser'

@@ -1,10 +1,12 @@
 FROM python:3.8-slim-buster
 
+RUN pip install uv
+
 WORKDIR /codeapp
 
 COPY requirements.txt requirements.txt
 
-RUN pip install -r requirements.txt
+RUN uv pip install -r requirements.txt
 
 COPY . .
 
